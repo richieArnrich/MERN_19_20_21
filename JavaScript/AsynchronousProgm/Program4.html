@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Callbacks in javascript</h1>
+    <script>
+      function sarvanan(callback) {
+        document.write("I am sarvanan, trying to call other person" + "<br>");
+        callback();
+      }
+
+      function friend1() {
+        document.write("I am richie, I am called by sarvanan" + "<br>");
+      }
+
+      function friend2() {
+        document.write("I am karthik, I am called by sarvanan");
+      }
+      let input = window.prompt("Choose between 1 and 2");
+      if (input == 1) {
+        sarvanan(friend1);
+      } else if (input == 2) {
+        sarvanan(friend2);
+      }
+      //   a function being passed as a parameter to another function is called as callback
+    </script>
+  </body>
+</html>

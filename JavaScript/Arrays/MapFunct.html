@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Array Map Function</h1>
+    <p>
+      1. It returns a new modfied array of the original array. <br />
+      2. It applies the callback function to each of the array element in the
+      original array and stores the result in a resultant array
+    </p>
+
+    <script>
+      let arr = [2, 4, 5, 6, 8, 9, 10];
+      console.log(arr);
+
+      let newArr = arr.map((num) => {
+        return num * 2;
+      });
+      console.log(newArr);
+    </script>
+  </body>
+</html>

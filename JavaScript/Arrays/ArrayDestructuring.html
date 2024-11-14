@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Array destructuring</h1>
+    <p>Process of dividing the array into its constituent elements</p>
+    <script>
+      // define an array
+      let fruits = ["Apple", "Banana", "Grapes", "Blackberry"];
+      // use array destructuring to assign values to variables
+      let [f1, f2, f3, f4] = fruits;
+      document.write("using index value: " + fruits[2] + "<br>");
+      document.write("using destructered variable" + f3 + "<br>");
+
+      //   use rest operator
+      fruits = [
+        "Apple",
+        "Banana",
+        "Grapes",
+        "Blackberry",
+        "Watermelon",
+        "Butterfruit",
+        "Muskmelon",
+      ];
+      let [fruit1, fruit2, fruit3, ...restOfFruits] = fruits;
+      document.write(fruit3 + "<br>");
+      document.write("rest of the fruits: " + restOfFruits + "<br>");
+      console.log(restOfFruits); //typeof restOfFruits is array (obj)
+    </script>
+  </body>
+</html>

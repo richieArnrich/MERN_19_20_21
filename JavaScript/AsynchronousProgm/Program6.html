@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Asynchronous Programming and Callbacks</h1>
+    <script>
+      let mynumber;
+      function function1(callback) {
+        setTimeout(() => {
+          console.log("function 1");
+          mynumber = 19;
+          callback();
+        }, 2000);
+      }
+
+      function1(() => {
+        console.log("function 2");
+        console.log(mynumber);
+      });
+      //   callback function
+    </script>
+  </body>
+</html>

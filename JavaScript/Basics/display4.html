@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Create table and display data</h1>
+    <script>
+      let tablEle = document.createElement("table");
+      let theadEle = document.createElement("thead");
+      let tr = document.createElement("tr");
+      let th1 = document.createElement("th");
+      let th2 = document.createElement("th");
+      //   end of row 1
+      th1.innerHTML = "Name";
+      th2.innerHTML = "Age";
+      tr.appendChild(th1);
+      tr.appendChild(th2);
+      theadEle.appendChild(tr);
+      //   row 1 added to the table as child
+      tablEle.appendChild(theadEle);
+
+      //   create tbody
+      let tbodyEle = document.createElement("tbody");
+      //   create row 2
+      tr = document.createElement("tr");
+      let td1 = document.createElement("td");
+      td1.innerHTML = "Amith";
+      let td2 = document.createElement("td");
+      td2.innerHTML = 20;
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      tbodyEle.appendChild(tr);
+      tablEle.appendChild(tbodyEle);
+      document.body.appendChild(tablEle);
+    </script>
+  </body>
+</html>

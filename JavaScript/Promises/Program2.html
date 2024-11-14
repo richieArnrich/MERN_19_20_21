@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Showcase json data in the form a table from a promise function</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <script>
+      function getJsonData() {
+        return new Promise(function (res, rej) {
+          setTimeout(() => {
+            req =
+              '[{"name": "Sachin"}, {"name": "Ganguly"}, {"name": "Dhoni"}, {"name": "Kohli"}]';
+            res(req); //the request from myReq is resolved
+          }, 100);
+        });
+      }
+
+      function displayData(data) {
+        console.log(data);
+        let arr = JSON.parse(data);
+        let tableBody = document.getElementById("tbody");
+        arr.map((item) => {
+          let tr = document.createElement("tr");
+          let td = document.createElement("td");
+          td.innerHTML = item.name;
+          tr.appendChild(td);
+          tableBody.appendChild(tr);
+        });
+      }
+      let myReq = getJsonData();
+      myReq.then(displayData); //call displayData only when the promise is resolved from getJsonData()
+    </script>
+  </body>
+</html>
+
+<!-- given an array of objects
+[
+  {
+        "name": "pen",
+        "price": 10.99
+  },
+  {
+        "name": "book",
+        "price": 5.99
+  },
+  {
+    "name": "box",
+    "price": 7.99
+  }
+]
+
+design an asynchronous function to display the items in a table and showcase the total price 
+of all the items in the array
+-->

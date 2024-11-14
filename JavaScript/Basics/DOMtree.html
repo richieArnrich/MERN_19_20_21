@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>DOM TREE</h1>
+    <p>
+      1. It is the representation of the html in a tree like structure. <br />
+      2. Each object is called as a node <br />
+      3. Each node has a value and child nodes. <br />
+      4. innerHTML will read the html elements in the string whereas
+      innerText/textContent will read the string as it is. <br />
+    </p>
+    <p id="i1">Hello I am a new line and JS can change my content</p>
+
+    <script>
+      // capture the element h3 based on id
+      let pEle = document.getElementById("i1");
+      //   console.log(h3Ele);
+      //   console.log(h3Ele.innerHTML);
+      pEle.innerHTML = "I am a new content changed using <b>JS</b>";
+    </script>
+  </body>
+</html>

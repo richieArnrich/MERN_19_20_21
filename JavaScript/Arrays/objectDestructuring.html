@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Object Destructuring</h1>
+    <p>
+      It is the process of dividing the object properties into its constituent
+      variables
+    </p>
+    <script>
+      // define an object
+      let user = {
+        name: "John",
+        uid: "john@123",
+        email: "john@gmail.com",
+        password: "john123",
+      };
+      // object destructuring
+      let { name, uid, email, password } = user;
+      document.write("User Name: " + name + "<br>");
+      document.write("User ID: " + uid + "<br>");
+      document.write("Email ID: " + email + "<br>");
+      document.write("Password: " + password + "<br>");
+
+      let user2 = {};
+      let { name2, uid2, email2, password2 } = user2;
+      console.log(name2);
+    </script>
+  </body>
+</html>

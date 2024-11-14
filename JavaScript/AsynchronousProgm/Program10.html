@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Need of nested callbacks</h1>
+    <p>
+      Need of nested callbacks is to handle asynchronous operations. When we
+      have multiple asynchronous operations, we need to handle them in a
+      specific order. This is where nested callbacks come in handy.
+    </p>
+    <script>
+      function add(a, b, callback1) {
+        setTimeout(() => {
+          let r = a + b;
+          callback1(r);
+        }, 2000);
+      }
+
+      function sub(addresult, b, callback2) {
+        setTimeout(() => {
+          let r = addresult - b;
+          callback2(r);
+        }, 2000);
+      }
+
+      function mul(subresult, b, callback3) {
+        setTimeout(() => {
+          let r = subresult * b;
+          callback3(r);
+        }, 2000);
+      }
+
+      function div(mulresult, b, callback4) {
+        setTimeout(() => {
+          let r = mulresult / b;
+          callback4(r);
+        }, 2000);
+      }
+      add(10, 15, (addresult) => {
+        sub(addresult, 6, (subresult) => {
+          mul(subresult, 3, (mulresult) => {
+            div(mulresult, 3, (finalresult) => {
+              console.log("final result: " + finalresult);
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

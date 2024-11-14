@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- create a js function to create a h1 element which says 
+     "This is my first webpage" and a paragraph which says "New pargaraph added onto dom"
+     must be done using JS-->
+    <script>
+      let h1Ele = document.createElement("h1");
+      h1Ele.textContent = "This is my first webpage";
+      document.body.appendChild(h1Ele);
+      let pEle = document.createElement("p");
+      pEle.textContent = "New pargaraph added onto dom";
+      document.body.appendChild(pEle);
+    </script>
+  </body>
+</html>

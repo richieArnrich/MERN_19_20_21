@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Browser Object Model</h1>
+    <p>
+      1. It provides inbuilt functions to communicate with the browser <br />
+      2. It provides window object which inturn provides functions and
+      attributes to interact with the browser <br />
+      3. It represents the current working window of the browser
+    </p>
+    <script>
+      // window object
+      console.log(window);
+      window.alert("Hi I am alert box");
+      window.prompt("Enter a number");
+
+      //   screen object inside window
+      //   screen object provides attributes to work with the browser
+      //   screen such as height,width etc
+      console.log(window.screen);
+      //   location object inside window
+      //   location object provides attributes to work with the host and the url of the
+      // current executing webpage eg: host, hostname, url etc
+      console.log(window.location);
+    </script>
+  </body>
+</html>

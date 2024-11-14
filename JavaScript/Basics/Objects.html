@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Javascript Objects</h1>
+    <script>
+      // define a new object
+      let person = {
+        name: "Goku",
+        age: 25,
+        superpower: "Super Sayian",
+        planet: "unknown",
+      };
+      //   using . notation: obj_name.attribute_name
+      document.write("Person name: " + person.name + "<br>");
+      document.write("Person age: " + person.age + "<br>");
+      document.write("Person superpower: " + person.superpower + "<br>");
+      document.write("Person planet: " + person.planet + "<br>");
+      document.write("---------------------" + "<br>");
+      //   using [] notation: obj_name["attribute_name"]
+      document.write("Person name: " + person["name"] + "<br>");
+      document.write("Person age: " + person["age"] + "<br>");
+      document.write("Person superpower: " + person["superpower"] + "<br>");
+      document.write("Person planet: " + person["planet"] + "<br>");
+      document.write("---------------------" + "<br>");
+      //   using a loop to access attributes for ...in loop
+      for (let key in person) {
+        document.write(person[key] + "<br>");
+      }
+    </script>
+  </body>
+</html>

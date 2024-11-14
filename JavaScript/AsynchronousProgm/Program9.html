@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Callback Hell</h1>
+    <p>
+      Callback hell results due to nested callbacks which are deeply nested one
+      within the other. It looks like a pyramidical like structure, called as
+      the pyramid of doom.
+    </p>
+
+    <script>
+      // nested callback
+      function myfunction1(callback) {
+        setTimeout(() => {
+          console.log("My function 1");
+          callback();
+        }, 2000);
+      }
+
+      function myfunction2(callback) {
+        setTimeout(() => {
+          console.log("My function 2");
+          callback();
+        }, 2000);
+      }
+
+      myfunction1(() => {
+        myfunction2(() => {
+          console.log("All functions are completed");
+        });
+      });
+    </script>
+  </body>
+</html>

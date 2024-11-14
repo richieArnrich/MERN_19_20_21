@@ -1,0 +1,46 @@
+<!-- Simulate a js function to assign values 
+to user objects and display the given inputs -->
+<!-- 
+setUsers() === assign values to user object where user object takes userID, userName
+let user = {
+    userId: 1,
+    userName: "John"
+}
+
+setUsers() is asynchronous in nature
+
+fetchUsers() === capture the details after the setUsers has finished assigning values
+after capturing it will display the user details
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Simuation of set() and get()</h1>
+    <script>
+      function setUsers(id, name, callback) {
+        setTimeout(() => {
+          let userObj = {
+            userId: id,
+            userName: name,
+          };
+          callback(userObj);
+        }, 2000);
+      }
+
+      function fetchUsers(userObj) {
+        console.log(userObj.userId);
+        console.log(userObj.userName);
+      }
+      let id = window.prompt("Enter user id");
+      let name = window.prompt("Enter user name");
+      setUsers(id, name, fetchUsers);
+    </script>
+  </body>
+</html>

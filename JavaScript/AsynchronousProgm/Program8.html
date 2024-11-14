@@ -1,0 +1,55 @@
+<!-- 
+create a simulation where a function returns an arrays of objects
+function getUsers(){
+//returns an array of objects
+}
+
+fetchUsers() will accept the array given by the getUsers() and a callback will display
+the array of objects in the console
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Simulate get() and fetch()</h1>
+    <script>
+      // Define the function that returns an array of objects
+
+      function getUsers(callback) {
+        // Simulate a delay to mimic an API call
+        setTimeout(() => {
+          let arr = [
+            {
+              userId: 1,
+              userName: "Amith",
+            },
+            {
+              userId: 2,
+              userName: "Rahul",
+            },
+            {
+              userId: 3,
+              userName: "Suresh",
+            },
+            {
+              userId: 4,
+              userName: "Raj",
+            },
+          ];
+          callback(arr);
+        }, 2000);
+      }
+
+      function fetchUsers(usersArr) {
+        // print the arr in the console
+        console.log(usersArr);
+      }
+
+      getUsers(fetchUsers);
+    </script>
+  </body>
+</html>

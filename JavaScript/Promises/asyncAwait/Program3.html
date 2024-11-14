@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Error handling with promises</h1>
+    <script>
+      // Define a function that returns a promise
+      function getSomething() {
+        return new Promise(function (res, rej) {
+          // Simulate an error
+          res("Something went wrong");
+        });
+      }
+
+      async function fetchSomething() {
+        try {
+          const data = await getSomething();
+          console.log(data);
+        } catch (err) {
+          console.log(err);
+        }
+      }
+
+      fetchSomething();
+    </script>
+  </body>
+</html>

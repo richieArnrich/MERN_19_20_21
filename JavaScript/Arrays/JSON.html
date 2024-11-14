@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JSON: JavaScript Object Notation</h1>
+    <p>It is a string representation of an object</p>
+    <script>
+      let jsonString = '{"name": "John", "age":30, "country": "India"}';
+      //   convert jsonString into an object
+      let userObject = JSON.parse(jsonString);
+      console.log(userObject); //jsonstring is converted into an object
+
+      let user = {
+        name: "John",
+        age: 30,
+        country: "India",
+      };
+      //   convert the user object into json string
+      let userJsonString = JSON.stringify(user);
+      document.write(userJsonString);
+      console.log(userJsonString);
+    </script>
+  </body>
+</html>

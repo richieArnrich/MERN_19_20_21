@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>I have clicked <span id="count">0</span> times</h1>
+    <p>Previous Counts: <span id="prev"></span></p>
+    <p>Press Buttons</p>
+    <button onclick="increment()">Increment</button>
+    <button onclick="reset()">Reset</button>
+    <button onclick="decrement()">Decrement</button>
+    <script>
+      let clicks = 0;
+      let countEle = document.getElementById("count");
+      let preEle = document.getElementById("prev");
+      let arr = [];
+      let index = 0; //used to itterate through array index values
+      function increment() {
+        clicks++;
+        countEle.innerHTML = clicks;
+      }
+
+      function reset() {
+        arr[index] = clicks; //store current clicks value into the array
+        index++; //increment index after storing
+        preEle.innerHTML = preEle.innerHTML + " " + clicks;
+        clicks = 0;
+        countEle.innerHTML = clicks;
+        console.log(arr);
+      }
+
+      function decrement() {
+        clicks--;
+        countEle.innerHTML = clicks;
+      }
+    </script>
+  </body>
+</html>

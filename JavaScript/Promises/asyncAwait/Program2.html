@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Async Await</h1>
+    <script>
+      function myPromise() {
+        return new Promise(function (resolve, reject) {
+          setTimeout(() => {
+            console.log("Promise resolving...");
+            resolve("Hello");
+          }, 5000);
+        });
+      }
+
+      async function getPromise() {
+        console.log("Start function");
+        let proData = await myPromise();
+        console.log(proData);
+        console.log("End function");
+      }
+
+      getPromise();
+    </script>
+  </body>
+</html>

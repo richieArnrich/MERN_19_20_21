@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      tr,
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 50%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .form-container {
+        background-color: lightcyan;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+      }
+      input {
+        padding: 5px;
+        margin: 5px 0 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>User Details Form</h1>
+      <form>
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" id="firstName" />
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" id="lastName" />
+        <label for="contact">Contact</label>
+        <input type="text" name="contact" id="contact" />
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" />
+        <input type="submit" onclick="handleSubmit()" />
+      </form>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Contact</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+
+    <script src="./array_form.js"></script>
+  </body>
+</html>

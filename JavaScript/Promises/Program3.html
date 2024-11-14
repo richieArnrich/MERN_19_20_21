@@ -1,0 +1,75 @@
+<!-- given an array of objects
+[
+  {
+        "name": "pen",
+        "price": 10.99
+  },
+  {"name": "book","price": 5.99},
+  {"name": "box","price": 7.99}
+]
+
+design an asynchronous function to display the items in a table and showcase the total price 
+of all the items in the array
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Items</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <script>
+      let toggle = false;
+      function getObjData() {
+        let tbody = document.getElementById("tbody");
+        if (!toggle) {
+          tbody.innerHTML = "loading data...";
+        }
+        return new Promise(function (resolve, reject) {
+          setTimeout(() => {
+            data =
+              '[{"name": "pen","price": 10.99},{"name": "book","price": 5.99},{"name": "box","price": 7.99}]';
+            toggle = true;
+            tbody.innerHTML = "";
+            resolve(JSON.parse(data));
+          }, 2000);
+        });
+      }
+
+      function calculateTotal(data) {
+        let tbody = document.getElementById("tbody");
+        let total = 0;
+        data.map((item) => {
+          total = total + item.price;
+          const row = document.createElement("tr");
+          const nameCell = document.createElement("td");
+          const priceCell = document.createElement("td");
+          nameCell.innerHTML = item.name;
+          priceCell.innerHTML = item.price;
+          row.appendChild(nameCell);
+          row.appendChild(priceCell);
+          tbody.appendChild(row);
+        });
+        const totalCell = document.createElement("td");
+        totalCell.innerHTML = `Total: ${total}`;
+        const totalRow = document.createElement("tr");
+        totalRow.appendChild(totalCell);
+        tbody.appendChild(totalRow);
+      }
+
+      getObjData().then(calculateTotal);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Array Map Function</h1>
+    <p>Given an array of objects, display the data in the form of a table</p>
+    <form>
+      ID: <input type="number" id="id" name="id" /><br /><br />
+      Name: <input type="text" id="name" name="name" /><br /><br />
+      Age: <input type="number" id="age" name="age" /><br /><br />
+      <input type="submit" value="Submit" onclick="storeData()" />
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <script>
+      let table = document.getElementById("tbody");
+      // Define the array of objects
+      let data = [
+        { id: 1, name: "John", age: 25 },
+        { id: 2, name: "Jane", age: 30 },
+        { id: 3, name: "Bob", age: 35 },
+        { id: 4, name: "Reena", age: 15 },
+        { id: 5, name: "Rohit", age: 25 },
+        { id: 6, name: "Akshay", age: 25 },
+      ];
+      // Get the form elements
+      let newData = []; //create new empty array to store the new user entered data
+      function storeData() {
+        let idValue = document.getElementById("id").value;
+        let nameValue = document.getElementById("name").value;
+        let ageValue = document.getElementById("age").value;
+        let obj = {
+          id: idValue,
+          name: nameValue,
+          age: ageValue,
+        };
+        newData.push(obj);
+        newData.map(display);
+        newData.pop();
+        event.preventDefault();
+      }
+      function display(obj) {
+        let row = document.createElement("tr");
+        let idCell = document.createElement("td");
+        let nameCell = document.createElement("td");
+        let ageCell = document.createElement("td");
+        idCell.innerHTML = obj.id;
+        nameCell.innerHTML = obj.name;
+        ageCell.innerHTML = obj.age;
+        row.appendChild(idCell);
+        row.appendChild(nameCell);
+        row.appendChild(ageCell);
+        table.appendChild(row);
+      }
+      data.map(display); //show the default output
+    </script>
+  </body>
+</html>
