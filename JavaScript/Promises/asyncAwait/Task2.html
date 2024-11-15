@@ -21,6 +21,27 @@
         margin-bottom: 10px;
         padding: 10px;
       }
+      .profile {
+        width: 50%;
+        background-color: lightgray;
+        padding: 10px;
+        margin: 10px auto;
+        display: none;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      tr,
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 50%;
+      }
+      h2 {
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -38,7 +59,10 @@
       />
       <input type="submit" onclick="handleSubmit()" />
     </form>
-    <table id="table"></table>
+    <div class="profile" id="profile">
+      <h2 id="welcome"></h2>
+      <table id="table"></table>
+    </div>
     <script src="./Task2.js"></script>
   </body>
 </html>

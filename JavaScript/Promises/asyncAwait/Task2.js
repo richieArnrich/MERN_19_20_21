@@ -27,16 +27,23 @@ function authenticateUser(userObj, users) {
   for (let user of users) {
     if (id == user.id && email == user.email) {
       showProfile(user);
+      return;
     }
+    alert("Invalid Credentials");
   }
 }
 
 function showProfile(user) {
+  let div = document.getElementById("profile");
+  div.style.display = "block";
   let proTable = document.getElementById("table");
+  let h2 = document.getElementById("welcome");
+  h2.innerHTML = `Welcome ${user.name}`;
   for (let key in user) {
     let row = document.createElement("tr");
     row.style.textTransform = "capitalize";
     let keyCell = document.createElement("td");
+    keyCell.style.fontWeight = "bold";
     let valueCell = document.createElement("td");
     if (key != "address" && key != "company") {
       keyCell.innerHTML = key;
@@ -49,6 +56,7 @@ function showProfile(user) {
         console.log(key);
         let addressRow = document.createElement("tr");
         let addressCell = document.createElement("td");
+        addressCell.style.fontWeight = "bold";
         let addressData = document.createElement("td");
         addressCell.innerHTML = "Address";
         addressData.innerHTML = `${user["address"].street} , ${user["address"].suite}, ${user["address"].city}, ${user["address"].zipcode}`;
@@ -59,6 +67,7 @@ function showProfile(user) {
       if (key == "company") {
         let companyRow = document.createElement("tr");
         let companyCell = document.createElement("td");
+        companyCell.style.fontWeight = "bold";
         let companyData = document.createElement("td");
         companyCell.innerHTML = "Company";
         companyData.innerHTML = `${user["company"].name}, ${user["company"].catchPhrase}`;
