@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        margin: 0 auto;
+        background-color: lightgrey;
+        padding: 10px;
+      }
+      label,
+      input {
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>View Profile</h1>
+    <form>
+      <h3>Enter Details</h3>
+      <label for="id">ID</label>
+      <input type="text" id="id" name="id" placeholder="Enter your id" />
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your email"
+      />
+      <input type="submit" onclick="handleSubmit()" />
+    </form>
+    <table id="table"></table>
+    <script src="./Task2.js"></script>
+  </body>
+</html>
