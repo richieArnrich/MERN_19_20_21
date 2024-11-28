@@ -17,7 +17,7 @@ class UpdateState extends Component {
     });
   };
   render() {
-    return (~
+    return (
       <div>
         <h1>
           My name is {this.state.name} and {this.state.age}
