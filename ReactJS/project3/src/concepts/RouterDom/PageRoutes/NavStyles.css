@@ -1,0 +1,18 @@
+.navbar {
+  background-color: navy;
+  color: white;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-brand {
+  padding: 5px;
+  font-size: 24px;
+}
+.nav-link {
+  color: white;
+  padding: 5px;
+  margin: 5px;
+  text-decoration: none;
+}
