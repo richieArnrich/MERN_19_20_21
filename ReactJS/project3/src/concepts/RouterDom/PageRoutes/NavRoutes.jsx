@@ -7,7 +7,7 @@ import About from "../Pages/About";
 
 function NavRoutes() {
   return (
-    <BrowserRouter>
+    <BrowserRouter> 
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
