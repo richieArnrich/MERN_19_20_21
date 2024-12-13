@@ -1,0 +1,4 @@
+A VPC (Virtual Private Cloud) in AWS (Amazon Web Services) is a customizable private network 
+within the AWS cloud where you can launch and manage your AWS resources, such as EC2 instances, 
+in a secure and isolated environment. It provides full control over your virtual networking setup, 
+including IP address ranges, subnets, route tables, and gateways.

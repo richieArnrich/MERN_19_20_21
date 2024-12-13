@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .my-div {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      table,
+      tr,
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="my-div">
+      <button onclick="getAllData()">View All Data</button>
+      <form>
+        <input type="text" name="id" id="id" placeholder="enter user id" />
+        <input type="submit" onclick="getSingleData()" />
+      </form>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>ID</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <script src="./script.js"></script>
+  </body>
+</html>
