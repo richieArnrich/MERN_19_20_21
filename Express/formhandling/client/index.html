@@ -17,6 +17,9 @@
         border-collapse: collapse;
         width: 50%;
       }
+      .display-details {
+        display: flex;
+      }
     </style>
   </head>
   <body>
@@ -27,15 +30,18 @@
         <input type="submit" onclick="getSingleData()" />
       </form>
     </div>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>ID</th>
-        </tr>
-      </thead>
-      <tbody id="tbody"></tbody>
-    </table>
+    <div class="display-details">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>ID</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+      <div id="single-user"></div>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>

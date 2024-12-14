@@ -17,6 +17,7 @@ function getSingleData() {
     .then((res) => res.json())
     .then((res) => {
       console.log(res);
+      displaySingleUser(res.user);
     })
     .catch((err) => {
       console.log(err);
@@ -36,4 +37,14 @@ function display(users) {
     tr.appendChild(idCell);
     tbody.appendChild(tr);
   }
+}
+
+function displaySingleUser(user) {
+  let div = document.getElementById("single-user");
+  let namePara = document.createElement("p");
+  let idPara = document.createElement("p");
+  namePara.innerHTML = "Name = " + user.name;
+  idPara.innerHTML = "ID = " + user.id;
+  div.appendChild(namePara);
+  div.appendChild(idPara);
 }
